@@ -1,0 +1,7 @@
+* README
+
+This repo hosts my projects website. This is developed using emacs org-mode and
+uses export to html to generate the website. The website uses theme called
+Imagine.
+
+https://projects.learntosolveit.com is the website the projects I have done.
