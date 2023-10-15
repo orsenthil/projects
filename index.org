@@ -9,7 +9,7 @@
 *** https://www.learntosolveit.com/
 This was my first project, aimed to help me learn C programming language. It has
 survived for 20 years, and I have been updating it periodically. I have to
-finish this with the C Code with Proper Understanding.
+finish this with the C Code with proper understanding.
 
 ** CPython                                                    :python:ci:git:
 *** https://github.com/python/cpython/pulls/orsenthil
@@ -25,7 +25,8 @@ be used directly.
 
 ** Fortune Browser Extension :javascript:python:datastore:
 *** https://github.com/orsenthil/fortune-browser-extension
-It is my collection of quotes that is displayed with a new browser tabs. I enjoy reading them, and adding to the collection.
+It is my collection of quotes that is displayed with a new browser tabs. I
+enjoy reading them, and adding to the collection.
 
 
 ** Blog                                              :python:nikola:
@@ -35,12 +36,15 @@ opinions on politics, self-help and my reviews on books.
 
 ** Minecraft Server                                        :minecraft:docker:
 *** https://mc.learntosolveit.com/
-
 We host a minecraft server, called Occamy Minecraft Server. My children build
 some amazing creations in the minecraft.
 
 ** Mastodon                                                          :docker:
 *** https://social.learntosolveit.com/home
+I host a Mastodon instance for myself. It is a microblogging service, federated
+universe where you can follow people from other instances and exchange amazing
+ideas.
+
 
 ** Courses Documentation                                      :python:sphinx:
 *** https://courses.learntosolveit.com/
@@ -55,6 +59,8 @@ to automate trading. This is for single person, personal use only.
 
 ** Kubectl Explorer                                              :javascript:
 *** https://kubectl.learntosolveit.com/
+Website to explore kubectl commands. It provides the manifest examples that can
+be used directly.
 
 ** Marriage Website                                        :python:appengine:
 *** https://shalini-weds-senthil.appspot.com/MainPage
@@ -113,7 +119,18 @@ using latin script.
 
 * Jobs
 
-*** Lucasfilm
+*** Amazon Web Services
+
+I work as a Senior Systems Development Engineer in the Amazon Web Services in
+the Elastic Kubernetes Service. I focus on the Container Networking domain, and
+work on projects, services related to Container Networks, like VPC CNI,
+Resource Controller,Kube-Proxy, CoreDNS and Load Balancer Controller.
+
+I wrote an important service to detect security vulnerablities early for the
+EKS services.
+
+*** Mesosphere / D2IQ
+
 As a Staff Software Engineer and Tech Lead in the Developer
 Productivity Team at D2IQ, my responsiblities include design and
 development of software tools to improve the software development
@@ -123,14 +140,6 @@ System Software.
 
 My job duties also includes mentoring junior developers, reviewing the
 design and code.
-
-As a Senior Software Engineer in the Information Systems team in
-Lucasfilm Singapore, my job responsibilities included development of
-software tools and systems used by artists in the Movie production
-department. Workflow tools were developed using Python programming
-language, Javascript programming language, Oracle Database.
-
-*** Mesosphere
 
 *** Okta
 
@@ -165,12 +174,48 @@ systems, libraries, and frameworks.
 
 *** Lucasfilm Singapore
 
-Lucasfilm Start Date - May 30th, 2011
-Lucasfilm End Date - Thu, Jun 21, 2012
-
-The Signature #05-00, 51 Changi Business Park Central 2 (S) 486066
+I worked as a Senior Software Engineer in the Information Systems team and
+worked on web application that was used in movie production pipelie. The web
+application was a Python web application using Pyramid framework. extensively
+used Javascript, JQuery and backed was an Oracle Database.
 
 *** Akamai
 Akamai – March 2, 2009 – January 31, 2011
 
+I was working as a Senior Software Engineer in the Akamai. I developed a tool
+called Toolserver that used to gather logs from various services and pushed to
+the mapreduce processing system. Toolserver was developed using Twisted
+asynchronous Python framework.
+
 *** Dell India
+I was working as a Software Engineer in Dell India R&D Center, Bangalore. I
+worked in the Dell OpenManage Server Administrator team. I was responsible for
+developing the software that is used to manage the Dell Servers.
+
+
+* Patents
+
+*** System and Method For Downloading Content Associated with Optical
+Media US 12/342,732 · Filed Dec 23, 2008
+
+Fast Download like mechanism for downloading content in your setup box and Blu
+Ray disk.
+
+*** System and Method for Audiovisual Content Search
+US 11/671,535 · Filed Feb 6, 2007
+
+A subtitle indexing engine and ability search by dialogues for the movies that
+you are watching on Blu Ray disc.
+
+
+*** System and method for printer-based syndication
+US 11/087,966  Filed Mar 23, 2005
+
+Idea for RSS support with printer firmware so that customized newspapers can be
+scheduled for delivery morning to your house.
+
+*** Obtaining user input for inclusion in system management logs
+US 11/008,443 · Filed Dec 9, 2004
+
+Idea to include log messages written by system administrators with System log
+generated by services.
