@@ -1,0 +1,22 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     width="400" height="300" viewBox="0 0 400 300" xml:space="preserve">
+  
+  <!-- Background (transparent) -->
+  <rect width="400" height="300" fill="none"/>
+  
+  <!-- Heart icon on the left -->
+  <path d="M50 120 C40 110, 25 110, 25 125 C25 140, 50 160, 50 160 C50 160, 75 140, 75 125 C75 110, 60 110, 50 120 Z" fill="#E91E63"/>
+  
+  <!-- Love Match text -->
+  <text x="110" y="140" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#E91E63">Love</text>
+  <text x="110" y="175" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#E91E63">Match</text>
+  
+  <!-- Small decorative hearts -->
+  <path d="M320 100 C315 95, 305 95, 305 105 C305 115, 320 130, 320 130 C320 130, 335 115, 335 105 C335 95, 325 95, 320 100 Z" fill="#F48FB1" opacity="0.7"/>
+  <path d="M350 180 C345 175, 335 175, 335 185 C335 195, 350 210, 350 210 C350 210, 365 195, 365 185 C365 175, 355 175, 350 180 Z" fill="#F48FB1" opacity="0.7"/>
+  <path d="M80 200 C75 195, 65 195, 65 205 C65 215, 80 230, 80 230 C80 230, 95 215, 95 205 C95 195, 85 195, 80 200 Z" fill="#F48FB1" opacity="0.7"/>
+  
+  <!-- Connection line/arc between hearts -->
+  <path d="M 75 140 Q 200 90, 320 115" stroke="#F48FB1" stroke-width="2" fill="none" opacity="0.5"/>
+  
+</svg> 

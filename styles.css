@@ -1,0 +1,394 @@
+/* Custom Styles for Technical Portfolio */
+
+/* Smooth scrolling for better UX */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom color variables */
+:root {
+    --primary-color: #3273dc;
+    --secondary-color: #363636;
+    --accent-color: #00d1b2;
+    --text-light: #f5f5f5;
+    --text-dark: #363636;
+    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --shadow-heavy: 0 8px 16px rgba(0, 0, 0, 0.2);
+    --transition-fast: 0.2s ease-in-out;
+    --transition-medium: 0.3s ease-in-out;
+    --transition-slow: 0.5s ease-in-out;
+}
+
+/* Global styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* Enhanced typography */
+.title {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+
+.subtitle {
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+/* Projects section as main landing area */
+#projects {
+    padding-top: 4rem; /* Just enough for fixed navbar */
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+#projects .title {
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+    margin-top: 0;
+}
+
+#projects .subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* Project cards styling */
+.project-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    cursor: pointer;
+    position: relative;
+    background: white;
+    margin-bottom: 1.5rem;
+}
+
+.project-card:hover {
+    box-shadow: var(--shadow-heavy);
+}
+
+.project-card:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.project-card:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Project image styling */
+.project-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* Removed image scaling on hover for accessibility */
+
+/* Project content styling */
+.project-card .card-content {
+    padding: 1.5rem;
+}
+
+.project-card .title {
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.project-description {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Tags styling */
+.tags {
+    margin-top: 1rem;
+}
+
+.tag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 6px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Card footer styling */
+.card-footer {
+    border-top: 1px solid #f0f0f0;
+    background: #fafafa;
+}
+
+.card-footer-item {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.card-footer-item:hover {
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+}
+
+.card-footer-item:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: -2px;
+}
+
+.card-footer-item .icon {
+    margin-right: 0.5rem;
+}
+
+/* Section styling */
+.section {
+    padding: 2rem 1.5rem;
+}
+
+/* Override for projects section specifically */
+#projects.section {
+    padding: 4rem 1.5rem 2rem;
+}
+
+.section:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* About section enhancements */
+#about .content {
+    font-size: 1.1rem;
+}
+
+#about ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#about li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+#about li::before {
+    content: '▸';
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Contact form styling */
+.box {
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    border: none;
+}
+
+.input, .textarea {
+    border-radius: 8px;
+    border: 2px solid #e1e5e9;
+    transition: var(--transition-fast);
+}
+
+.input:focus, .textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
+}
+
+.button {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: var(--transition-fast);
+}
+
+.button.is-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #4a90e2 100%);
+    border: none;
+}
+
+.button.is-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Navigation enhancements */
+.navbar {
+    box-shadow: var(--shadow-light);
+    backdrop-filter: blur(10px);
+    background-color: rgba(54, 54, 54, 0.95) !important;
+}
+
+.navbar-item {
+    transition: var(--transition-fast);
+    border-radius: 6px;
+    margin: 0 0.25rem;
+}
+
+.navbar-item:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.navbar-item:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Footer enhancements */
+.footer {
+    margin-top: 0;
+}
+
+.footer .button {
+    transition: var(--transition-fast);
+}
+
+.footer .button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Focus indicators for keyboard navigation */
+*:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .project-card {
+        border: 2px solid #000;
+    }
+    
+    .input, .textarea {
+        border: 2px solid #000;
+    }
+    
+    .button {
+        border: 2px solid #000;
+    }
+}
+
+/* Responsive design improvements */
+@media screen and (max-width: 768px) {
+    #projects {
+        padding-top: 4rem;
+    }
+    
+    #projects .title {
+        font-size: 1.75rem;
+    }
+    
+    #projects .subtitle {
+        font-size: 1rem;
+    }
+    
+    .section {
+        padding: 2rem 1rem;
+    }
+    
+    .project-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .columns.is-multiline {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .column {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .navbar,
+    .card-footer,
+    .footer {
+        display: none !important;
+    }
+    
+    .project-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .section {
+        padding: 1rem 0;
+    }
+    
+    #projects {
+        padding-top: 0;
+    }
+}
+
+/* Loading animation for images */
+.project-image {
+    opacity: 1;
+    /* Removed animation that might delay content visibility */
+}
+
+/* Removed fadeIn animation for accessibility and immediate loading */
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4a90e2;
+}
+
+/* Selection styling */
+::selection {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+::-moz-selection {
+    background-color: var(--primary-color);
+    color: white;
+} 

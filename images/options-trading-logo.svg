@@ -1,0 +1,48 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     width="400" height="300" viewBox="0 0 400 300" xml:space="preserve">
+  
+  <!-- Background (transparent) -->
+  <rect width="400" height="300" fill="none"/>
+  
+  <!-- Financial chart icon on the left -->
+  <g transform="translate(30, 80)">
+    <!-- Chart bars -->
+    <rect x="0" y="60" width="8" height="40" fill="#7B1FA2"/>
+    <rect x="12" y="45" width="8" height="55" fill="#7B1FA2"/>
+    <rect x="24" y="30" width="8" height="70" fill="#7B1FA2"/>
+    <rect x="36" y="50" width="8" height="50" fill="#7B1FA2"/>
+    <rect x="48" y="25" width="8" height="75" fill="#7B1FA2"/>
+    
+    <!-- Trend line -->
+    <path d="M 4 90 L 16 75 L 28 60 L 40 80 L 52 55" stroke="#9C27B0" stroke-width="2" fill="none"/>
+    <!-- Chart points -->
+    <circle cx="4" cy="90" r="2" fill="#9C27B0"/>
+    <circle cx="16" cy="75" r="2" fill="#9C27B0"/>
+    <circle cx="28" cy="60" r="2" fill="#9C27B0"/>
+    <circle cx="40" cy="80" r="2" fill="#9C27B0"/>
+    <circle cx="52" cy="55" r="2" fill="#9C27B0"/>
+  </g>
+  
+  <!-- Options Trading text -->
+  <text x="120" y="120" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#7B1FA2">Options</text>
+  <text x="120" y="150" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#7B1FA2">Trading</text>
+  <text x="120" y="175" font-family="Arial, sans-serif" font-size="18" font-weight="normal" fill="#9C27B0">Guide</text>
+  
+  <!-- Financial symbols -->
+  <g transform="translate(320, 90)">
+    <!-- Dollar sign -->
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#BA68C8" opacity="0.6">$</text>
+    <!-- Up arrow -->
+    <path d="M 15 35 L 25 25 L 35 35 M 25 25 L 25 45" stroke="#BA68C8" stroke-width="2" fill="none" opacity="0.6"/>
+  </g>
+  
+  <!-- Analysis button representation -->
+  <rect x="120" y="200" width="120" height="30" rx="15" fill="#9C27B0" opacity="0.8"/>
+  <text x="180" y="220" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Analyze Stock</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="350" cy="180" r="3" fill="#BA68C8" opacity="0.4"/>
+  <circle cx="80" cy="200" r="2" fill="#BA68C8" opacity="0.4"/>
+  <circle cx="300" cy="120" r="2" fill="#BA68C8" opacity="0.4"/>
+  
+</svg> 
