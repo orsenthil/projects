@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initNavigation();
     initProjectCards();
     initContactForm();
+    initQuote();
     initAccessibility();
     initAnimations();
     
@@ -226,6 +227,116 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+    // Quote functionality
+    function initQuote() {
+        const quoteText = document.getElementById('quote-text');
+        const quoteAuthor = document.getElementById('quote-author');
+        
+        if (!quoteText || !quoteAuthor) {
+            console.warn('Quote elements not found');
+            return;
+        }
+        
+        // Fetch quote from the API
+        fetchRandomQuote();
+        
+        // Add click handler to refresh quote
+        const quoteContainer = document.getElementById('quote-container');
+        if (quoteContainer) {
+            quoteContainer.style.cursor = 'pointer';
+            quoteContainer.title = 'Click to get a new quote';
+            quoteContainer.addEventListener('click', fetchRandomQuote);
+        }
+        
+        function fetchRandomQuote() {
+            // Show loading state
+            quoteText.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading inspiring quote...';
+            quoteAuthor.textContent = '';
+            
+            // Use a CORS proxy to bypass CORS restrictions
+            const apiUrl = 'https://quotes-1271.appspot.com/json';
+            const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(apiUrl);
+            
+            fetch(proxyUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(proxyData => {
+                    // Parse the actual quote data from the proxy response
+                    const data = JSON.parse(proxyData.contents);
+                    // Clean up the quote text by removing escape characters
+                    let cleanQuote = data.quote
+                        .replace(/\\u2019/g, "'")  // Replace unicode apostrophe
+                        .replace(/\\"/g, '"')      // Replace escaped quotes
+                        .replace(/\\n/g, ' ')      // Replace newlines with spaces
+                        .replace(/\s+/g, ' ')      // Replace multiple spaces with single space
+                        .trim();
+                    
+                    // Format the quote with proper quotation marks
+                    if (!cleanQuote.startsWith('"')) {
+                        cleanQuote = `"${cleanQuote}"`;
+                    }
+                    
+                    // Clean up author information
+                    let cleanAuthor = data.author
+                        .replace(/For\s+/i, '')    // Remove "For " prefix
+                        .replace(/,\s*\d{2}-\d{2}-\d{4}/, '') // Remove date
+                        .trim();
+                    
+                    // Update the DOM with animation
+                    quoteText.style.opacity = '0';
+                    quoteAuthor.style.opacity = '0';
+                    
+                    setTimeout(() => {
+                        quoteText.innerHTML = cleanQuote;
+                        quoteAuthor.textContent = `— ${cleanAuthor}`;
+                        
+                        quoteText.style.opacity = '1';
+                        quoteAuthor.style.opacity = '1';
+                    }, 200);
+                })
+                .catch(error => {
+                    console.error('Error fetching quote:', error);
+                    
+                    // Try direct API call as fallback (might work on some browsers/networks)
+                    fetch('https://quotes-1271.appspot.com/json')
+                        .then(response => response.json())
+                        .then(data => {
+                            let cleanQuote = data.quote
+                                .replace(/\\u2019/g, "'")
+                                .replace(/\\"/g, '"')
+                                .replace(/\\n/g, ' ')
+                                .replace(/\s+/g, ' ')
+                                .trim();
+                            
+                            if (!cleanQuote.startsWith('"')) {
+                                cleanQuote = `"${cleanQuote}"`;
+                            }
+                            
+                            let cleanAuthor = data.author
+                                .replace(/For\s+/i, '')
+                                .replace(/,\s*\d{2}-\d{2}-\d{4}/, '')
+                                .trim();
+                            
+                            quoteText.innerHTML = cleanQuote;
+                            quoteAuthor.textContent = `— ${cleanAuthor}`;
+                            quoteText.style.opacity = '1';
+                            quoteAuthor.style.opacity = '1';
+                        })
+                        .catch(() => {
+                            // Final fallback quote
+                            quoteText.innerHTML = '"The only way to do great work is to love what you do."';
+                            quoteAuthor.textContent = '— Steve Jobs';
+                            quoteText.style.opacity = '1';
+                            quoteAuthor.style.opacity = '1';
+                        });
+                });
+        }
+    }
+    
     // Accessibility enhancements
     function initAccessibility() {
         // Skip to main content link
@@ -386,6 +497,16 @@ document.addEventListener('DOMContentLoaded', function() {
         .project-card.is-touched {
             transform: translateY(-4px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        #quote-text, #quote-author {
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        #quote-container:hover {
+            background-color: #f1f3f5 !important;
+            transform: translateY(-1px);
+            transition: all 0.2s ease-in-out;
         }
     `;
     document.head.appendChild(style);
