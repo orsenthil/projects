@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         function fetchRandomQuote() {
             // Show loading state
-            quoteText.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading inspiring quote...';
+            quoteText.innerHTML = '<i class="fas fa-spinner fa-spin"></i> fortune cookie...';
             quoteAuthor.textContent = '';
             
             // Use a CORS proxy to bypass CORS restrictions with cache busting
