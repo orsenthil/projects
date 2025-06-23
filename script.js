@@ -1,6 +1,8 @@
 // Technical Portfolio JavaScript
+console.log('Script loaded successfully!');
 
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing...');
     
     // Initialize all functionality
     initNavigation();
@@ -229,14 +231,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Quote functionality
     function initQuote() {
+        console.log('Initializing quote functionality...');
         const quoteText = document.getElementById('quote-text');
         const quoteAuthor = document.getElementById('quote-author');
+        
+        console.log('Quote elements:', { quoteText, quoteAuthor });
         
         if (!quoteText || !quoteAuthor) {
             console.warn('Quote elements not found');
             return;
         }
         
+        console.log('Quote elements found! Fetching quote...');
         // Fetch quote from the API
         fetchRandomQuote();
         
@@ -249,6 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         function fetchRandomQuote() {
+            console.log('fetchRandomQuote called');
             // Show loading state
             quoteText.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading inspiring quote...';
             quoteAuthor.textContent = '';
@@ -257,16 +264,20 @@ document.addEventListener('DOMContentLoaded', function() {
             const apiUrl = 'https://quotes-1271.appspot.com/json';
             const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(apiUrl);
             
+            console.log('Fetching from proxy:', proxyUrl);
             fetch(proxyUrl)
                 .then(response => {
+                    console.log('Response received:', response.status);
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
                     }
                     return response.json();
                 })
                 .then(proxyData => {
+                    console.log('Proxy data:', proxyData);
                     // Parse the actual quote data from the proxy response
                     const data = JSON.parse(proxyData.contents);
+                    console.log('Parsed quote data:', data);
                     // Clean up the quote text by removing escape characters
                     let cleanQuote = data.quote
                         .replace(/\\u2019/g, "'")  // Replace unicode apostrophe
@@ -408,6 +419,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Observe elements for animation
         const animateElements = document.querySelectorAll('.project-card, .content, .box');
         animateElements.forEach(element => {
+            // Skip the quote container from animation
+            if (element.closest('#quote-container') || element.querySelector('#quote-container')) {
+                return;
+            }
             element.style.opacity = '0';
             element.style.transform = 'translateY(20px)';
             element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
