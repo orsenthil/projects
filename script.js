@@ -249,7 +249,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Click handler
             quoteContainer.addEventListener('click', function() {
-                console.log('Quote container clicked!');
                 fetchRandomQuote();
             });
             
@@ -257,7 +256,6 @@ document.addEventListener('DOMContentLoaded', function() {
             quoteContainer.addEventListener('keydown', function(e) {
                 if (e.key === ' ' || e.key === 'Enter' || e.key.toLowerCase() === 'r') {
                     e.preventDefault();
-                    console.log('Quote refresh via keyboard!');
                     fetchRandomQuote();
                 }
             });
@@ -266,13 +264,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Global keyboard shortcut
         document.addEventListener('keydown', function(e) {
             if (e.key.toLowerCase() === 'q' && !e.ctrlKey && !e.metaKey && !e.altKey) {
-                console.log('Global quote refresh shortcut!');
                 fetchRandomQuote();
             }
         });
         
         function fetchRandomQuote() {
-            console.log('fetchRandomQuote called - getting new quote...');
             // Show loading state
             quoteText.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading inspiring quote...';
             quoteAuthor.textContent = '';
@@ -282,7 +278,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const apiUrl = `https://quotes-1271.appspot.com/json?t=${timestamp}`;
             const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(apiUrl);
             
-            console.log('Fetching quote from:', proxyUrl);
             fetch(proxyUrl)
                 .then(response => {
                     if (!response.ok) {
@@ -293,7 +288,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(proxyData => {
                     // Parse the actual quote data from the proxy response
                     const data = JSON.parse(proxyData.contents);
-                    console.log('Received quote:', data.quote.substring(0, 50) + '...', 'by', data.author);
                     // Clean up the quote text by removing escape characters
                     let cleanQuote = data.quote
                         .replace(/\\u2019/g, "'")  // Replace unicode apostrophe
@@ -320,10 +314,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     setTimeout(() => {
                         quoteText.innerHTML = cleanQuote;
                         quoteAuthor.textContent = `— ${cleanAuthor}`;
-                        
-                        // Add a subtle timestamp for debugging
-                        const now = new Date();
-                        console.log(`Quote updated at ${now.toLocaleTimeString()}: ${cleanQuote.substring(0, 30)}...`);
                         
                         quoteText.style.opacity = '1';
                         quoteAuthor.style.opacity = '1';
