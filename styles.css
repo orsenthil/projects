@@ -39,7 +39,7 @@ body {
 
 /* Projects section as main landing area */
 #projects {
-    padding-top: 2rem;
+    padding-top: 4rem; /* Just enough for fixed navbar */
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
@@ -161,7 +161,7 @@ body {
 
 /* Override for projects section specifically */
 #projects.section {
-    padding: 2rem 1.5rem 2rem;
+    padding: 4rem 1.5rem 2rem;
 }
 
 .section:nth-child(even) {
@@ -226,7 +226,27 @@ body {
     box-shadow: var(--shadow-medium);
 }
 
+/* Navigation enhancements */
+.navbar {
+    box-shadow: var(--shadow-light);
+    backdrop-filter: blur(10px);
+    background-color: rgba(54, 54, 54, 0.95) !important;
+}
 
+.navbar-item {
+    transition: var(--transition-fast);
+    border-radius: 6px;
+    margin: 0 0.25rem;
+}
+
+.navbar-item:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.navbar-item:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
 
 /* Footer enhancements */
 .footer {
@@ -283,7 +303,7 @@ body {
 /* Responsive design improvements */
 @media screen and (max-width: 768px) {
     #projects {
-        padding-top: 2rem;
+        padding-top: 4rem;
     }
     
     #projects .title {
@@ -315,6 +335,7 @@ body {
 
 /* Print styles */
 @media print {
+    .navbar,
     .card-footer,
     .footer {
         display: none !important;

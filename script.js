@@ -3,12 +3,64 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize all functionality
+    initNavigation();
     initProjectCards();
     initContactForm();
     initAccessibility();
     initAnimations();
     
-
+    // Navigation functionality
+    function initNavigation() {
+        const navbar = document.querySelector('.navbar');
+        const navbarItems = document.querySelectorAll('.navbar-item[href^="#"]');
+        
+        // Smooth scrolling for navigation links
+        navbarItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const navbarHeight = navbar.offsetHeight;
+                    const targetPosition = targetSection.offsetTop - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active navigation item
+                    updateActiveNavItem(targetId);
+                }
+            });
+        });
+        
+        // Update active navigation item on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPosition = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    updateActiveNavItem('#' + sectionId);
+                }
+            });
+        });
+        
+        function updateActiveNavItem(activeId) {
+            navbarItems.forEach(item => {
+                item.classList.remove('is-active');
+                if (item.getAttribute('href') === activeId) {
+                    item.classList.add('is-active');
+                }
+            });
+        }
+    }
     
     // Project cards functionality
     function initProjectCards() {
