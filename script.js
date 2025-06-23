@@ -410,41 +410,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Animation and scroll effects
+    // Animation and scroll effects - DISABLED for static page load
     function initAnimations() {
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, observerOptions);
-        
-        // Observe elements for animation
-        const animateElements = document.querySelectorAll('.project-card, .content, .box');
-        animateElements.forEach(element => {
-            // Skip the quote container from animation
-            if (element.closest('#quote-container') || element.querySelector('#quote-container')) {
-                return;
-            }
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-            observer.observe(element);
+        // Ensure all content is visible immediately
+        const allElements = document.querySelectorAll('.project-card, .content, .box');
+        allElements.forEach(element => {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
         });
         
-        // Add visible class when element comes into view
-        document.addEventListener('scroll', function() {
-            const visibleElements = document.querySelectorAll('.is-visible');
-            visibleElements.forEach(element => {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
+        // Keep minimal hover animations for project cards only
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            card.style.transition = 'transform 0.2s ease-out, box-shadow 0.2s ease-out';
+            
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+                this.style.boxShadow = '';
             });
         });
     }
