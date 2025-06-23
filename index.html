@@ -1370,44 +1370,51 @@
     <section id="contact" class="section">
         <div class="container">
             <div class="has-text-centered mb-6">
-                <h2 class="title is-2">Get In Touch</h2>
-                <p class="subtitle is-5 has-text-grey">I like discussing ideas with people.</p>
+                <h2 class="title is-2">Contact</h2>
             </div>
             
             <div class="columns is-centered">
                 <div class="column is-6">
                     <div class="box">
-                        <div class="field">
-                            <label class="label" for="name">Name</label>
-                            <div class="control">
-                                <input class="input" type="text" id="name" placeholder="Your name" required>
+                        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                            <!-- Hidden honeypot field for spam protection -->
+                            <input type="hidden" name="form-name" value="contact">
+                            <p style="display: none;">
+                                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                            </p>
+                            
+                            <div class="field">
+                                <label class="label" for="name">Name</label>
+                                <div class="control">
+                                    <input class="input" type="text" id="name" name="name" placeholder="Your name" required>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="field">
-                            <label class="label" for="email">Email</label>
-                            <div class="control">
-                                <input class="input" type="email" id="email" placeholder="your.email@example.com" required>
+                            
+                            <div class="field">
+                                <label class="label" for="email">Email</label>
+                                <div class="control">
+                                    <input class="input" type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="field">
-                            <label class="label" for="message">Message</label>
-                            <div class="control">
-                                <textarea class="textarea" id="message" placeholder="Tell me about your project..." rows="5" required></textarea>
+                            
+                            <div class="field">
+                                <label class="label" for="message">Message</label>
+                                <div class="control">
+                                    <textarea class="textarea" id="message" name="message" placeholder="Tell me about your project..." rows="5" required></textarea>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="field">
-                            <div class="control">
-                                <button class="button is-primary is-fullwidth" type="submit">
-                                    <span class="icon">
-                                        <i class="fas fa-paper-plane"></i>
-                                    </span>
-                                    <span>Send Message</span>
-                                </button>
+                            
+                            <div class="field">
+                                <div class="control">
+                                    <button class="button is-primary is-fullwidth" type="submit">
+                                        <span class="icon">
+                                            <i class="fas fa-paper-plane"></i>
+                                        </span>
+                                        <span>Send Message</span>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

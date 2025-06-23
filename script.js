@@ -106,9 +106,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Contact form functionality
     function initContactForm() {
-        const form = document.querySelector('#contact .box');
-        const inputs = form.querySelectorAll('input, textarea');
-        const submitButton = form.querySelector('button[type="submit"]');
+        const form = document.querySelector('form[name="contact"]');
+        const inputs = form ? form.querySelectorAll('input, textarea') : [];
+        const submitButton = form ? form.querySelector('button[type="submit"]') : null;
         
         // Form validation
         inputs.forEach(input => {
@@ -116,9 +116,9 @@ document.addEventListener('DOMContentLoaded', function() {
             input.addEventListener('input', clearFieldError);
         });
         
-        // Form submission
-        if (submitButton) {
-            submitButton.addEventListener('click', handleFormSubmission);
+        // Form submission with Netlify Forms support
+        if (form) {
+            form.addEventListener('submit', handleFormSubmission);
         }
         
         function validateField(e) {
@@ -188,26 +188,41 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Simulate form submission
+            // Show loading state
             const originalText = submitButton.innerHTML;
             submitButton.innerHTML = '<span class="icon"><i class="fas fa-spinner fa-spin"></i></span><span>Sending...</span>';
             submitButton.disabled = true;
             
-            // Simulate API call
-            setTimeout(() => {
+            // Submit to Netlify
+            const formData = new FormData(form);
+            
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
                 showNotification('Thank you! Your message has been sent successfully.', 'is-success');
                 
                 // Reset form
+                form.reset();
                 inputs.forEach(input => {
-                    input.value = '';
                     input.classList.remove('is-danger');
+                    const errorMessage = input.parentNode.querySelector('.help.is-danger');
+                    if (errorMessage) {
+                        errorMessage.remove();
+                    }
                 });
-                
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                showNotification('Sorry, there was an error sending your message. Please try again.', 'is-danger');
+            })
+            .finally(() => {
                 // Reset button
                 submitButton.innerHTML = originalText;
                 submitButton.disabled = false;
-                
-            }, 2000);
+            });
         }
     }
     
