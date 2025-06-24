@@ -9,10 +9,7 @@
     <!-- Main title centered -->
     <text x="0" y="-10" font-family="Arial, sans-serif" font-size="24" font-weight="bold" 
           fill="#00AA00" text-anchor="middle" dominant-baseline="middle">Occamy Server</text>
-    
-    <!-- Subtitle -->
-    <text x="0" y="15" font-family="Arial, sans-serif" font-size="12" 
-          fill="#8B4513" text-anchor="middle">Minecraft • Family Creations</text>
+
   </g>
   
 </svg> 

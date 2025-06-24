@@ -10,9 +10,6 @@
     <text x="0" y="-10" font-family="Arial, sans-serif" font-size="18" font-weight="bold" 
           fill="#8E44AD" text-anchor="middle" dominant-baseline="middle">Sourashtra Association</text>
     
-    <!-- Subtitle -->
-    <text x="0" y="15" font-family="Arial, sans-serif" font-size="12" 
-          fill="#9B59B6" text-anchor="middle">Language Preservation • Community</text>
   </g>
   
 </svg> 

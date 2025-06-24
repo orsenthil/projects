@@ -10,9 +10,6 @@
     <text x="0" y="-10" font-family="Arial, sans-serif" font-size="22" font-weight="bold" 
           fill="#2980B9" text-anchor="middle" dominant-baseline="middle">Course Notes</text>
     
-    <!-- Subtitle -->
-    <text x="0" y="15" font-family="Arial, sans-serif" font-size="12" 
-          fill="#27AE60" text-anchor="middle">Georgia Tech OMSCS • Documentation</text>
   </g>
   
 </svg> 

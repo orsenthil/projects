@@ -8,11 +8,7 @@
   <g transform="translate(200, 100)">
     <!-- Main title centered -->
     <text x="0" y="-10" font-family="Arial, sans-serif" font-size="20" font-weight="bold" 
-          fill="#FF9900" text-anchor="middle" dominant-baseline="middle">EKS Custom Net</text>
-    
-    <!-- Subtitle -->
-    <text x="0" y="15" font-family="Arial, sans-serif" font-size="12" 
-          fill="#326CE5" text-anchor="middle">AWS • Kubernetes • Rust • eksctl</text>
+          fill="#FF9900" text-anchor="middle" dominant-baseline="middle">EKS Custom Networking</text>
   </g>
   
 </svg> 

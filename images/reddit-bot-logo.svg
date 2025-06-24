@@ -9,10 +9,7 @@
     <!-- Main title centered -->
     <text x="0" y="-10" font-family="Arial, sans-serif" font-size="24" font-weight="bold" 
           fill="#FF4500" text-anchor="middle" dominant-baseline="middle">Reddit Bot</text>
-    
-    <!-- Subtitle -->
-    <text x="0" y="15" font-family="Arial, sans-serif" font-size="12" 
-          fill="#0079D3" text-anchor="middle">COVID News • Email • Docker</text>
+
   </g>
   
 </svg> 

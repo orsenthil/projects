@@ -9,10 +9,6 @@
     <!-- Main title centered -->
     <text x="0" y="-10" font-family="Arial, sans-serif" font-size="20" font-weight="bold" 
           fill="#0C4B33" text-anchor="middle" dominant-baseline="middle">Django + React</text>
-    
-    <!-- Subtitle -->
-    <text x="0" y="15" font-family="Arial, sans-serif" font-size="12" 
-          fill="#61DAFB" text-anchor="middle">Starter Template • OAuth • TypeScript • AI</text>
   </g>
   
 </svg> 
