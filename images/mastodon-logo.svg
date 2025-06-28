@@ -1,15 +1,54 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-     width="400" height="200" viewBox="0 0 400 200" xml:space="preserve">
+     width="400" height="300" viewBox="0 0 400 300" xml:space="preserve">
   
   <!-- Transparent background -->
-  <rect width="400" height="200" fill="none"/>
+  <rect width="400" height="300" fill="none"/>
   
   <!-- Content group with padding and centering -->
-  <g transform="translate(200, 100)">
-    <!-- Main title centered -->
-    <text x="0" y="-10" font-family="Arial, sans-serif" font-size="26" font-weight="bold" 
+  <g transform="translate(200, 150)">
+    
+    <!-- Mastodon elephant icon (80% scaled) -->
+    <g transform="translate(0, -32) scale(0.8)">
+      <!-- Elephant body -->
+      <ellipse cx="0" cy="10" rx="45" ry="35" fill="#6364FF"/>
+      
+      <!-- Elephant head -->
+      <circle cx="0" cy="-15" r="25" fill="#6364FF"/>
+      
+      <!-- Elephant trunk -->
+      <path d="M -20,-25 Q -35,-30 -40,-15 Q -35,-5 -20,-10" fill="#6364FF"/>
+      
+      <!-- Elephant ear -->
+      <ellipse cx="-15" cy="-20" rx="8" ry="15" fill="#5855D6"/>
+      
+      <!-- Elephant eye -->
+      <circle cx="-8" cy="-18" r="3" fill="white"/>
+      <circle cx="-7" cy="-18" r="1.5" fill="#333"/>
+      
+      <!-- Elephant tusk -->
+      <ellipse cx="-25" cy="-5" rx="3" ry="8" fill="white" transform="rotate(-20)"/>
+      
+      <!-- Elephant legs -->
+      <rect x="-35" y="35" width="8" height="15" fill="#5855D6" rx="4"/>
+      <rect x="-15" y="35" width="8" height="15" fill="#5855D6" rx="4"/>
+      <rect x="5" y="35" width="8" height="15" fill="#5855D6" rx="4"/>
+      <rect x="25" y="35" width="8" height="15" fill="#5855D6" rx="4"/>
+      
+      <!-- Elephant tail -->
+      <path d="M 40,20 Q 50,25 45,35" stroke="#5855D6" stroke-width="4" fill="none"/>
+    </g>
+    
+    <!-- Mastodon text (80% scaled) -->
+    <text x="0" y="32" font-family="Arial, sans-serif" font-size="22" font-weight="bold" 
           fill="#6364FF" text-anchor="middle" dominant-baseline="middle">Mastodon</text>
-
+    
+    <!-- Subdomain text (80% scaled) -->
+    <text x="0" y="52" font-family="Arial, sans-serif" font-size="13" font-weight="normal" 
+          fill="#666" text-anchor="middle" dominant-baseline="middle">social.learntosolveit.com</text>
+    
+    <!-- Decorative underline (80% scaled) -->
+    <line x1="-64" y1="60" x2="64" y2="60" stroke="#6364FF" stroke-width="2" opacity="0.3"/>
+    
   </g>
   
 </svg> 
