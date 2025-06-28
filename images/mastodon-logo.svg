@@ -7,47 +7,27 @@
   <!-- Content group with padding and centering -->
   <g transform="translate(200, 150)">
     
-    <!-- Mastodon elephant icon (80% scaled) -->
-    <g transform="translate(0, -32) scale(0.8)">
-      <!-- Elephant body -->
-      <ellipse cx="0" cy="10" rx="45" ry="35" fill="#6364FF"/>
-      
-      <!-- Elephant head -->
-      <circle cx="0" cy="-15" r="25" fill="#6364FF"/>
-      
-      <!-- Elephant trunk -->
-      <path d="M -20,-25 Q -35,-30 -40,-15 Q -35,-5 -20,-10" fill="#6364FF"/>
-      
-      <!-- Elephant ear -->
-      <ellipse cx="-15" cy="-20" rx="8" ry="15" fill="#5855D6"/>
-      
-      <!-- Elephant eye -->
-      <circle cx="-8" cy="-18" r="3" fill="white"/>
-      <circle cx="-7" cy="-18" r="1.5" fill="#333"/>
-      
-      <!-- Elephant tusk -->
-      <ellipse cx="-25" cy="-5" rx="3" ry="8" fill="white" transform="rotate(-20)"/>
-      
-      <!-- Elephant legs -->
-      <rect x="-35" y="35" width="8" height="15" fill="#5855D6" rx="4"/>
-      <rect x="-15" y="35" width="8" height="15" fill="#5855D6" rx="4"/>
-      <rect x="5" y="35" width="8" height="15" fill="#5855D6" rx="4"/>
-      <rect x="25" y="35" width="8" height="15" fill="#5855D6" rx="4"/>
-      
-      <!-- Elephant tail -->
-      <path d="M 40,20 Q 50,25 45,35" stroke="#5855D6" stroke-width="4" fill="none"/>
+    <!-- Official Mastodon logo (80% scaled and centered) -->
+    <g transform="translate(0, -40) scale(0.6)">
+      <!-- Center the original logo which is 216.4 x 232 -->
+      <g transform="translate(-108.2, -116)">
+        <!-- Mastodon elephant body -->
+        <path fill="#2b90d9" d="M211.80734 139.0875c-3.18125 16.36625-28.4925 34.2775-57.5625 37.74875-15.15875 1.80875-30.08375 3.47125-45.99875 2.74125-26.0275-1.1925-46.565-6.2125-46.565-6.2125 0 2.53375.15625 4.94625.46875 7.2025 3.38375 25.68625 25.47 27.225 46.39125 27.9425 21.11625.7225 39.91875-5.20625 39.91875-5.20625l.8675 19.09s-14.77 7.93125-41.08125 9.39c-14.50875.7975-32.52375-.365-53.50625-5.91875C9.23234 213.82 1.40609 165.31125.20859 116.09125c-.365-14.61375-.14-28.39375-.14-39.91875 0-50.33 32.97625-65.0825 32.97625-65.0825C49.67234 3.45375 78.20359.2425 107.86484 0h.72875c29.66125.2425 58.21125 3.45375 74.8375 11.09 0 0 32.975 14.7525 32.975 65.0825 0 0 .41375 37.13375-4.59875 62.915"/>
+        <!-- Mastodon "M" design -->
+        <path fill="#fff" d="M177.50984 80.077v60.94125h-24.14375v-59.15c0-12.46875-5.24625-18.7975-15.74-18.7975-11.6025 0-17.4175 7.5075-17.4175 22.3525v32.37625H96.20734V85.42325c0-14.845-5.81625-22.3525-17.41875-22.3525-10.49375 0-15.74 6.32875-15.74 18.7975v59.15H38.90484V80.077c0-12.455 3.17125-22.3525 9.54125-29.675 6.56875-7.3225 15.17125-11.07625 25.85-11.07625 12.355 0 21.71125 4.74875 27.8975 14.2475l6.01375 10.08125 6.015-10.08125c6.185-9.49875 15.54125-14.2475 27.8975-14.2475 10.6775 0 19.28 3.75375 25.85 11.07625 6.36875 7.3225 9.54 17.22 9.54 29.675"/>
+      </g>
     </g>
     
     <!-- Mastodon text (80% scaled) -->
-    <text x="0" y="32" font-family="Arial, sans-serif" font-size="22" font-weight="bold" 
-          fill="#6364FF" text-anchor="middle" dominant-baseline="middle">Mastodon</text>
+    <text x="0" y="35" font-family="Arial, sans-serif" font-size="22" font-weight="bold" 
+          fill="#2b90d9" text-anchor="middle" dominant-baseline="middle">Mastodon</text>
     
     <!-- Subdomain text (80% scaled) -->
-    <text x="0" y="52" font-family="Arial, sans-serif" font-size="13" font-weight="normal" 
+    <text x="0" y="55" font-family="Arial, sans-serif" font-size="13" font-weight="normal" 
           fill="#666" text-anchor="middle" dominant-baseline="middle">social.learntosolveit.com</text>
     
     <!-- Decorative underline (80% scaled) -->
-    <line x1="-64" y1="60" x2="64" y2="60" stroke="#6364FF" stroke-width="2" opacity="0.3"/>
+    <line x1="-80" y1="65" x2="80" y2="65" stroke="#2b90d9" stroke-width="2" opacity="0.3"/>
     
   </g>
   
